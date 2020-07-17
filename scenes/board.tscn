@@ -1,0 +1,64 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://scripts/board.gd" type="Script" id=1]
+[ext_resource path="res://scenes/SelectableArea.tscn" type="PackedScene" id=2]
+
+[node name="board" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="click_blocker" type="Control" parent="."]
+margin_right = 128.0
+margin_bottom = 128.0
+mouse_filter = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="pos0" parent="." instance=ExtResource( 2 )]
+position = Vector2( 21.711, 38.5081 )
+pos = 0
+
+[node name="pos1" parent="." instance=ExtResource( 2 )]
+position = Vector2( 71.253, 38.3647 )
+pos = 1
+
+[node name="pos2" parent="." instance=ExtResource( 2 )]
+position = Vector2( 106.729, 37.6576 )
+pos = 2
+
+[node name="pos3" parent="." instance=ExtResource( 2 )]
+position = Vector2( 22.838, 69.017 )
+pos = 3
+
+[node name="pos4" parent="." instance=ExtResource( 2 )]
+position = Vector2( 72.002, 69.7661 )
+pos = 4
+
+[node name="pos5" parent="." instance=ExtResource( 2 )]
+position = Vector2( 107.124, 70.3894 )
+pos = 5
+
+[node name="pos6" parent="." instance=ExtResource( 2 )]
+position = Vector2( 21.879, 97.2537 )
+pos = 6
+
+[node name="pos7" parent="." instance=ExtResource( 2 )]
+position = Vector2( 71.211, 98.8364 )
+pos = 7
+
+[node name="pos8" parent="." instance=ExtResource( 2 )]
+position = Vector2( 107.335, 98.6515 )
+pos = 8
+
+[node name="ai_timer" type="Timer" parent="."]
+wait_time = 0.5
+[connection signal="clicked" from="pos0" to="." method="_on_pos0_clicked"]
+[connection signal="clicked" from="pos1" to="." method="_on_pos1_clicked"]
+[connection signal="clicked" from="pos2" to="." method="_on_pos2_clicked"]
+[connection signal="clicked" from="pos3" to="." method="_on_pos3_clicked"]
+[connection signal="clicked" from="pos4" to="." method="_on_pos4_clicked"]
+[connection signal="clicked" from="pos5" to="." method="_on_pos5_clicked"]
+[connection signal="clicked" from="pos6" to="." method="_on_pos6_clicked"]
+[connection signal="clicked" from="pos7" to="." method="_on_pos7_clicked"]
+[connection signal="clicked" from="pos8" to="." method="_on_pos8_clicked"]
+[connection signal="timeout" from="ai_timer" to="." method="_on_ai_timer_timeout"]
