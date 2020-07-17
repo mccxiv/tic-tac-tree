@@ -8,7 +8,6 @@ var click_count: int = 0
 func _on_start_screen_click():
 	click_count += 1
 	if (click_count == 1): fade_out_the_intro_screen()
-	if (click_count == 2): display_lore_1()
 
 
 func fade_out_the_intro_screen():
@@ -24,6 +23,7 @@ func fade_out_the_intro_screen():
 		Tween.EASE_OUT
 	)
 	tween.start()
+	timeout('display_lore_1', 1)
 
 
 func display_lore_1():
